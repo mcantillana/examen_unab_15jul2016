@@ -8,7 +8,9 @@
           <h2>Artistas</h2>
           <ul>
             {% for artista in artistas %}
-            <li><a href="#">{{artista.nombre}}</a></li>
+            <li><a href="{% url 'albumes_por_artista' artista.id %}">{{artista.nombre}}</a></li>
+            {% empty %}
+            <p>No hay artistas en el sistema</p>
             {% endfor %}            
           </ul>
         </div>
